@@ -7,7 +7,7 @@ export default class IGFetchTest extends React.Component {
     this.state = {
       isLoading: true,
       // account_id: 'kendalljenner',
-      account_id: 'caradelevingne',  // You can change the account ID of Instagram
+      account_id: 'caradelevingne',  // You can change the Instagram account ID
       sort_id : 'like',
       modalVisible : false,
       modalImageUrl : "",
@@ -80,7 +80,6 @@ export default class IGFetchTest extends React.Component {
                   <Image
                     style={styles.image}
                     source={{uri: item.node.thumbnail_src}}
-                    onPress={this.clickImage.bind(this,item.node.display_url)}
                   />
                 </TouchableHighlight>
 
