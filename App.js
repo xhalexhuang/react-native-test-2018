@@ -7,7 +7,8 @@ export default class IGFetchTest extends React.Component {
     this.state = {
       isLoading: true,
       // account_id: 'kendalljenner',
-      account_id: 'caradelevingne',  // You can change the Instagram account ID
+      // account_id: 'caradelevingne',  // You can change the Instagram account ID
+      account_id: 'music',  // You can change the Instagram hashtag
       sort_id : 'like',
       modalVisible : false,
       modalImageUrl : "",
@@ -127,7 +128,11 @@ export default class IGFetchTest extends React.Component {
   }
 
   fetchData(){
-    var my_url = 'http://test.chungkan.com/react_test.php?id='+this.state.account_id+'&sort='+this.state.sort_id;
+    // for https://www.instagram.com/<username>/?__a=1
+    // var my_url = 'http://test.chungkan.com/react_test.php?id='+this.state.account_id+'&sort='+this.state.sort_id;
+    
+    // for https://www.instagram.com/explore/tags/<hashtag>/?__a=1
+    var my_url = 'http://test.chungkan.com/react_test_tag.php?id='+this.state.account_id+'&sort='+this.state.sort_id;
     fetch(my_url)
       .then((response) => response.json())
       .then((responseJson) => {
